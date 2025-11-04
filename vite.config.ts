@@ -128,7 +128,7 @@ export default defineConfig({
 	},
 
 	ssr: {
-		noExternal: ['@volverjs/ui-vue'],
+		noExternal: ['@volverjs/ui-vue/components'],
 	},
 
 	css: {
