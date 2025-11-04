@@ -1,17 +1,126 @@
 {
-	"typescript.tsdk": "node_modules/typescript/lib",
-	"editor.formatOnPaste": true,
-	"editor.formatOnSave": true,
+	// i18n-ally
+	"i18n-ally.keystyle": "nested",
+	"i18n-ally.localesPaths": [
+		"packages/i18n/src"
+	],
+	"i18n-ally.sortKeys": true,
+	"i18n-ally.sourceLanguage": "it",
+	"i18n-ally.displayLanguage": "it",
+	"i18n-ally.enabledFrameworks": [
+		"vue"
+	],
+	// Enable eslint for all supported languages
+	"css.validate": false,
+	"scss.validate": false,
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+		"vue",
+		"html",
+		"markdown",
+		"json",
+		"jsonc",
+		"toml",
+		"xml",
+		"gql",
+		"graphql",
+		"astro",
+		"css",
+		"less",
+		"scss",
+		"pcss",
+		"postcss"
+	],
+	// Disable the default formatter, use eslint instead
+	"prettier.enable": false,
+	"editor.formatOnSave": false,
+	"editor.formatOnPaste": false,
+	// Auto fix
 	"editor.codeActionsOnSave": {
-		"source.organizeImports": false,
-		"source.fixAll": true,
-		"source.fixAll.eslint": true,
-		"source.fixAll.stylelint": true
+		"source.fixAll.eslint": "explicit",
+		"source.organizeImports": "never"
 	},
-	"eslint.validate": ["javascript", "vue", "mdx", "typescript"],
-	"eslint.packageManager": "pnpm",
-	"[markdown]": {
-		"editor.tabSize": 2
+	// Silent the stylistic rules in you IDE, but still auto fix them
+	"eslint.rules.customizations": [
+		{
+			"rule": "style/*",
+			"severity": "off",
+			"fixable": true
+		},
+		{
+			"rule": "format/*",
+			"severity": "off",
+			"fixable": true
+		},
+		{
+			"rule": "*-indent",
+			"severity": "off",
+			"fixable": true
+		},
+		{
+			"rule": "*-spacing",
+			"severity": "off",
+			"fixable": true
+		},
+		{
+			"rule": "*-spaces",
+			"severity": "off",
+			"fixable": true
+		},
+		{
+			"rule": "*-order",
+			"severity": "off",
+			"fixable": true
+		},
+		{
+			"rule": "*-dangle",
+			"severity": "off",
+			"fixable": true
+		},
+		{
+			"rule": "*-newline",
+			"severity": "off",
+			"fixable": true
+		},
+		{
+			"rule": "*quotes",
+			"severity": "off",
+			"fixable": true
+		},
+		{
+			"rule": "*semi",
+			"severity": "off",
+			"fixable": true
+		}
+	],
+	// Base font size
+	"px-to-rem.px-per-rem": 16,
+	// Color theme
+	"workbench.colorCustomizations": {
+		"activityBar.background": "#53565a",
+		"activityBar.activeBackground": "#004fbc",
+		"activityBar.foreground": "#fff",
+		"activityBar.inactiveForeground": "#fff",
+		"activityBarBadge.background": "#161907",
+		"activityBarBadge.foreground": "#fff",
+		"titleBar.activeBackground": "#53565a",
+		"titleBar.inactiveBackground": "#53565a",
+		"titleBar.activeForeground": "#fff",
+		"titleBar.inactiveForeground": "#fff",
+		"statusBar.background": "#004fbc",
+		"statusBarItem.hoverBackground": "#53565a",
+		"statusBar.foreground": "#fff",
+		"activityBar.activeBorder": "#161907",
+		"statusBar.border": "#53565a",
+		"titleBar.border": "#53565a"
 	},
-	"i18n-ally.localesPaths": ["src/locales"]
+	"azureFunctions.deploySubpath": "functions",
+	"azureFunctions.scmDoBuildDuringDeployment": true,
+	"azureFunctions.pythonVenv": ".venv",
+	"azureFunctions.projectLanguage": "Python",
+	"azureFunctions.projectRuntime": "~4",
+	"debug.internalConsoleOptions": "neverOpen",
 }

@@ -6,7 +6,7 @@
 			href="https://github.com/volverjs"
 			target="_blank"
 			class="font-semibold">
-			Volver
+			Volver.js
 		</VvAction>
 	</footer>
 </template>

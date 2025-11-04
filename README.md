@@ -54,7 +54,6 @@ Inspired by [Vitesse](https://github.com/antfu/vitesse) ❤
 ### Plugins
 
 -   [Vue Router](https://github.com/vuejs/router)
-    -   [`vite-plugin-pages`](https://github.com/hannoeru/vite-plugin-pages) - File system based routing
 -   [Pinia](https://pinia.vuejs.org) - Intuitive, type safe, light and flexible Store for Vue using the composition api
 -   [`unplugin-vue-components`](https://github.com/antfu/unplugin-vue-components) - Components auto import
 -   [`unplugin-auto-import`](https://github.com/antfu/unplugin-auto-import) - Directly use Vue Composition API and others without importing

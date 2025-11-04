@@ -3,12 +3,12 @@
 	import '~/composables/useTheme'
 
 	useHead({
-		title: 'Curriculum vitae di Alessandro Bellesia',
+		title: 'Alessandro Bellesia',
 		meta: [
 			{
 				name: 'description',
 				content:
-					'Lead Front-End Developer con oltre 14 di esperienza nella	progettazione, sviluppo e ottimizzazione di interfacce utente per applicazioni web e mobile.',
+					'Sviluppatore con oltre 16 anni di esperienza, appassionato di motociclismo, subacquea e open-source, specializzato in TypeScript, Vue.js e Node.js.',
 			},
 		],
 	})

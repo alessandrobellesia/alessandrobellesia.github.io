@@ -1,11 +1,9 @@
 import { defineConfig } from 'vite'
-import path from 'path'
 import Vue from '@vitejs/plugin-vue'
 import ESLint from 'vite-plugin-eslint'
 import Stylelint from 'vite-plugin-stylelint'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
-import VueI18n from '@intlify/unplugin-vue-i18n/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import { VolverResolver } from '@volverjs/ui-vue/resolvers/unplugin'
 import {
@@ -14,6 +12,10 @@ import {
 } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
 import generateSitemap from 'vite-ssg-sitemap'
+import path from 'path'
+import { fileURLToPath } from 'url'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
 	resolve: {
@@ -42,6 +44,7 @@ export default defineConfig({
 
 		// https://github.com/posva/unplugin-vue-router
 		VueRouter({
+			importMode: 'async',
 			getRouteName: (routeNode) => getPascalCaseRouteName(routeNode),
 		}),
 
@@ -80,13 +83,6 @@ export default defineConfig({
 			eslintrc: {
 				enabled: true,
 			},
-		}),
-
-		// https://github.com/intlify/bundle-tools/tree/main/packages/vite-plugin-vue-i18n
-		VueI18n({
-			runtimeOnly: true,
-			compositionOnly: true,
-			include: [path.resolve(__dirname, 'locales/**')],
 		}),
 
 		// https://github.com/antfu/vite-plugin-pwa
@@ -137,7 +133,10 @@ export default defineConfig({
 
 	css: {
 		preprocessorOptions: {
-			scss: { additionalData: `@use "./src/assets/scss/settings" as *;` },
+			scss: {
+				additionalData: `@use "~/assets/scss/settings" as *;`,
+				api: 'modern',
+			},
 		},
 	},
 })
